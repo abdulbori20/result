@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 
-DB_NAME = 'password_db2'
+DB_NAME = 'Mening_Loiham'
 
 ##Shularni o'zizinikiga o'zgartiring
 DB_HOST = 'localhost'

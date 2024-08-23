@@ -5,6 +5,7 @@ import styles
 
 import string
 import random
+from database.connection import get_connection
 
 from database.database_main import *
 
@@ -92,8 +93,8 @@ class Yangi_Parol_Qoshish_Oynasi(QMainWindow):
         self.Parol_input.setText(random_password)
 
     def malumotlarni_saqla(self):
-        connection = init_db()
-        if connection:
+        connection = get_connection()
+        if connection.is_connected():
             try:
                 cursor = connection.cursor()
                 cursor.execute("""

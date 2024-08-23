@@ -17,10 +17,6 @@ def get_connection():
             return connection
     except Error as e:
         print(f"Ma'lumotlar bazasiga ulanishda xato yuz berdi: {e}")
-    finally:
-        if connection and connection.is_connected():
-            connection.close()
-            print("Ma'lumotlar bazasi ulanishi yopildi.")
 
     return None
 

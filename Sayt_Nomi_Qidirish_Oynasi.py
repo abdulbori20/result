@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database_main import *
 import styles
+from database.connection import get_connection
 
 
 class Sayt_Nomiga_Kora_Qidirish_Oynasi(QMainWindow):
@@ -43,8 +44,8 @@ class Sayt_Nomiga_Kora_Qidirish_Oynasi(QMainWindow):
     def Sayt_nomini_qidir(self):
         query = self.Sayt_yoki_Programma_Nomi_input.text().strip()
         if query:
-            connection = init_db()
-            if connection:
+            connection = get_connection()
+            if connection.is_connected():
                 try:
                     cursor = connection.cursor()
                     query_string = """

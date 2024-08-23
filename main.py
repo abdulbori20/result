@@ -1,12 +1,12 @@
 from PyQt5.QtWidgets import *
 from database.database_main import init_db
 import styles
+init_db()
 
-
-from Yangi_parol import *
-from Sayt_Nomi_Qidirish import *
+from Yangi_parol_Oynasi import *
+from Sayt_Nomi_Qidirish_Oynasi import *
 from Login_Oynasi import *
-from Parol_Malumotlari import *
+from Parol_Malumotlari_Oynasi import *
 
 app = QApplication([])
 class MainWindow(QMainWindow):
@@ -65,7 +65,6 @@ class MainWindow(QMainWindow):
         parol_oyna.show()
         self.oynalar.append(parol_oyna)
 
-init_db()
 
 main = MainWindow()
 main.show()
